@@ -1,10 +1,10 @@
 function parse() {
-    var newColors = parseList();
+    let newColors = parseList();
     writeToJson(newColors);
 }
 
 function parseList() {
-    var newColors = {
+    let newColors = {
         colors: []
     };
     for (const a of document.querySelectorAll("#color-list>li>a")) {
