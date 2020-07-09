@@ -1,6 +1,5 @@
 function parse() {
     let newColors = parseList();
-    writeToJson(newColors);
 }
 
 function parseList() {
@@ -43,19 +42,4 @@ function RGBToHex(rgb) {
     }
       
     return "#" + r + g + b;
-}
-
-//TODO this is nice, but sadly I'm not using Node.js
-function writeToJson(newColors) {
-    let fs = require('fs');
-    fs.readFile("kleuren.json", "utf8", function readFileCallback(err, data) {
-        if (err) {
-            console.log(err);
-        } else {
-            obj = JSON.parse(data);
-            obj.gamma.colors.push(newColors.colors);
-            var json = JSON.stringify(obj);
-            fs.writeFile("kleuren.json", json, "utf8", callback);
-        }
-    });
 }
