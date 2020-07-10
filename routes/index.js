@@ -7,8 +7,15 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/save', (req, res, next) => {
-  console.log('Got a POST request');
-  res.send('Got a POST request');
+  //TODO move this to a new function to save the data
+  try {
+    data = JSON.parse(req.body.data);
+  } catch (err) {
+    console.log(err);
+    res.status(400).send('This is not json!')
+  }
+  console.log(data);
+  res.send('POST request was good!');
 });
 
 module.exports = router;
