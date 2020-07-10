@@ -1,5 +1,13 @@
-function parse() {
+function parseKleuren() {
     let newColors = parseList();
+    const kleuren = JSON.stringify(newColors);
+    $.post("http://localhost:3000/save", {data : kleuren}, (data, status) => {
+        if (status === 'succes') {
+            alert('POST request was succedfull');
+        } else {
+            alert('POST request failed');
+        }
+    });
 }
 
 function parseList() {

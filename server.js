@@ -10,6 +10,7 @@ app.get('/', (req, res) => {
 
 app.post('/save', (req, res) => {
     const rawJSON = req.body.data;
+    console.log(JSON.parse(rawJSON));
     //TODO save it and stuff
     res.end('success');
 });

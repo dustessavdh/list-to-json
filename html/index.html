@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test data</title>
-    <script src="js/parser.js"></script>
+    <script src="../js/parser.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body onload="parse()">
+<body onload="parseKleuren()">
     <ul id="color-list" class="color-list" data-bind="foreach: { data: colors, as: 'color' }">
         <li data-bind="style: { 'background-color': color.code }, attr: { class: color.lightName }, css: { bordered: color.brightness > 250 }" class="light" style="background-color: #e5ecf2;">
             <a data-bind="attr: { href: '/kleur/' + color.url }" href="/kleur/gamma-nieuw-GN-076-13-slagroom">
