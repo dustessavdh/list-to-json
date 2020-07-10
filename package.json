@@ -21,7 +21,7 @@
   "homepage": "https://github.com/dusthijsvdh/list-to-json#readme",
   "dependencies": {
     "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
+    "debug": "~4.1.1",
     "express": "^4.17.1",
     "morgan": "~1.10.0"
   }
