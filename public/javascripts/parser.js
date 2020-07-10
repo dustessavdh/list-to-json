@@ -2,11 +2,12 @@ function parseKleuren() {
     let newColors = parseList();
     const kleuren = JSON.stringify(newColors);
     $.post("http://localhost:3000/save", {data : kleuren}, (data, status) => {
-        if (status === 'succes') {
-            alert('POST request was succedfull');
+        if (status === 'success') {
+            alert('POST request was successfull.');
         } else {
             alert('POST request failed');
         }
+        console.log(`Status: ${status}, data: ${data}`);
     });
 }
 
