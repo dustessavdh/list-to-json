@@ -1,14 +1,9 @@
 function parseKleuren() {
     let newColors = parseList();
     const kleuren = JSON.stringify(newColors);
-    $.post("http://localhost:3000/save", {data : kleuren}, (data, status) => {
-        if (status === 'success') {
-            alert('POST request was successfull.');
-        } else {
-            alert('POST request failed');
-        }
-        console.log(`Status: ${status}, data: ${data}`);
-    });
+    const url = 'http://localhost:3000/save';
+
+    sendData(url, kleuren);
 }
 
 function parseList() {
@@ -51,4 +46,18 @@ function RGBToHex(rgb) {
     }
       
     return "#" + r + g + b;
+}
+
+function sendData(url, data) {
+    $.ajax({
+        url: url,
+        type: "POST",
+        data: {data: data},
+        success: (res) => {
+            console.log(res);
+        },
+        error: (err) => {
+            console.log(`Error ${err}`);
+        }
+    });
 }
