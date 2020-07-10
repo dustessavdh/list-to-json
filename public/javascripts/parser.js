@@ -28,7 +28,7 @@ function parseList() {
             }
         }
         newColors.colors.push({name: name, hex: hex, code: code});
-    };
+    }
     return newColors;
 }
 
