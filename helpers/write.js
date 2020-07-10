@@ -9,7 +9,7 @@ exports.writeToJson = (newColors) => {
             obj = JSON.parse(data);
             obj.gamma.colors.push(newColors.colors);
             var json = JSON.stringify(obj);
-            fs.writeFile("kleuren.json", json, "utf8", callback);
+            fs.writeFile("../models/kleuren.json", json, "utf8", callback);
         }
     });
 }
