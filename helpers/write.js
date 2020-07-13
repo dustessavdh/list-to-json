@@ -1,17 +1,26 @@
-const fs = require('fs');   
+const fs = require('fs');
+const path = require('path');
+
+const file = 'kleuren.json';
 
 exports.writeToJson = (newColors) => {
-    let fs = require('fs');
-    fs.readFile("../models/kleuren.json", "utf8", function readFileCallback(err, data) {
+    const filePath = path.join(__dirname, '../models/', file);
+    fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {
+            console.log(err.code);
             console.log(err);
-            return "error";
         } else {
             obj = JSON.parse(data);
+            //TODO this creates an array in the existing array
             obj.gamma.colors.push(newColors.colors);
+
             var json = JSON.stringify(obj);
-            fs.writeFile("../models/kleuren.json", json, "utf8", callback);
-            return "success";
+            
+            fs.writeFile(filePath, json, 'utf8', (err) => {
+                if (err) throw err;
+                console.log('File has been saved!');
+            });
         }
     });
-}
+    return 'success';
+};

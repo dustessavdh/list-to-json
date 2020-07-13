@@ -15,7 +15,9 @@ router.post('/save', (req, res, next) => {
     console.log(err);
     res.status(400).send('This is not json!');
   }
+
   const writeSuccess = write.writeToJson(data);
+
   if (writeSuccess === 'success') {
     res.send('POST request was good!');
   } else {
