@@ -11,9 +11,8 @@ exports.writeToJson = (newColors) => {
             console.log(err);
         } else {
             obj = JSON.parse(data);
-            //TODO this creates an array in the existing array
-            obj.gamma.colors.push(newColors.colors);
 
+            obj.gamma.colors = addColorsToArray(obj.gamma.colors, newColors.colors)
             var json = JSON.stringify(obj);
             
             fs.writeFile(filePath, json, 'utf8', (err) => {
@@ -24,3 +23,14 @@ exports.writeToJson = (newColors) => {
     });
     return 'success';
 };
+
+function addColorsToArray(colorArray, newColors) {
+    if (newColors.length > 75000) {
+        newColors.forEach(newColor => {
+            colorArray.push(newColor);
+        });
+    } else {
+        colorArray.push(...newColors);
+    }
+    return colorArray;
+}
