@@ -1,10 +1,12 @@
 {
   "name": "list-to-json",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "The goal is to write something in javascript that can read a list from a website and parse it to json.",
-  "main": "server.js",
+  "main": "app.js",
+  "private": false,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,9 @@
   },
   "homepage": "https://github.com/dusthijsvdh/list-to-json#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1"
+    "cookie-parser": "~1.4.4",
+    "debug": "~4.1.1",
+    "express": "^4.17.1",
+    "morgan": "~1.10.0"
   }
 }

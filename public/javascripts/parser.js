@@ -1,7 +1,13 @@
-function parse() {
+// handle the pipeline for parsing all the data on the website
+function parseKleuren() {
     let newColors = parseList();
+    const kleuren = JSON.stringify(newColors);
+    const url = 'http://localhost:3000/save';
+
+    sendData(url, kleuren);
 }
 
+// get the list on the site and return it as an json object
 function parseList() {
     let newColors = {
         colors: []
@@ -19,10 +25,11 @@ function parseList() {
             }
         }
         newColors.colors.push({name: name, hex: hex, code: code});
-    };
+    }
     return newColors;
 }
 
+// convert rgb values to hex values
 function RGBToHex(rgb) {
     let sep = rgb.indexOf(",") > -1 ? "," : " ";
     rgb = rgb.substr(4).split(")")[0].split(sep);
@@ -42,4 +49,19 @@ function RGBToHex(rgb) {
     }
       
     return "#" + r + g + b;
+}
+
+// send a post request to a server
+function sendData(url, data) {
+    $.ajax({
+        url: url,
+        type: "POST",
+        data: {data: data},
+        success: (res) => {
+            console.log(res);
+        },
+        error: (err) => {
+            console.log(`Error ${err}`);
+        }
+    });
 }

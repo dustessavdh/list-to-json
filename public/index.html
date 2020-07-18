@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test data</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="/javascripts/parser.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body onload="parseKleuren()">
+    <!-- Gekopieerd van https://www.kleurenwaaier.nl/bepaal-je-kleur -->
+    <ul id="color-list" class="color-list" data-bind="foreach: { data: colors, as: 'color' }">
+        <li data-bind="style: { 'background-color': color.code }, attr: { class: color.lightName }, css: { bordered: color.brightness > 250 }" class="light" style="background-color: #e5ecf2;">
+            <a data-bind="attr: { href: '/kleur/' + color.url }" href="/kleur/gamma-nieuw-GN-076-13-slagroom">
+                <div class="line1" data-bind="text: color.name">GN 076-13</div>
+                <div class="line2">
+                    <span class="color-title" data-bind="text: color.title">Slagroom</span>
+                    <span data-bind="text: color.colorfanName">Gamma *nieuw</span>
+                </div>
+            </a>
+        </li>
+    
+        <li data-bind="style: { 'background-color': color.code }, attr: { class: color.lightName }, css: { bordered: color.brightness > 250 }" class="light" style="background-color: rgb(231, 235, 241);">
+            <a data-bind="attr: { href: '/kleur/' + color.url }" href="/kleur/gamma-nieuw-GN-087-13-schelp">
+                <div class="line1" data-bind="text: color.name">GN 087-13</div>
+                <div class="line2">
+                    <span class="color-title" data-bind="text: color.title">Schelp</span>
+                    <span data-bind="text: color.colorfanName">Gamma *nieuw</span>
+                </div>
+            </a>
+        </li>
+    
+        <li data-bind="style: { 'background-color': color.code }, attr: { class: color.lightName }, css: { bordered: color.brightness > 250 }" class="light" style="background-color: rgb(235, 239, 245);">
+            <a data-bind="attr: { href: '/kleur/' + color.url }" href="/kleur/gamma-nieuw-GN-082-13-schaap">
+                <div class="line1" data-bind="text: color.name">GN 082-13</div>
+                <div class="line2">
+                    <span class="color-title" data-bind="text: color.title">Schaap</span>
+                    <span data-bind="text: color.colorfanName">Gamma *nieuw</span>
+                </div>
+            </a>
+        </li>
+    </ul>
+</body>
+</html>
