@@ -2,13 +2,14 @@ const express = require('express');
 const write = require('../helpers/write');
 let router = express.Router();
 
-/* GET home page. */
+// GET home page
 router.get('/', (req, res, next) => {
   res.render('index', { title: 'Express' });
 });
 
+// On a post request try to save the data
 router.post('/save', (req, res, next) => {
-  //TODO move this to a new function to save the data
+  //TODO clean this up. maybe move it to a function so it's prettier
   try {
     data = JSON.parse(req.body.data);
   } catch (err) {

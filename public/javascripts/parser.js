@@ -1,3 +1,4 @@
+// handle the pipeline for parsing all the data on the website
 function parseKleuren() {
     let newColors = parseList();
     const kleuren = JSON.stringify(newColors);
@@ -6,6 +7,7 @@ function parseKleuren() {
     sendData(url, kleuren);
 }
 
+// get the list on the site and return it as an json object
 function parseList() {
     let newColors = {
         colors: []
@@ -27,6 +29,7 @@ function parseList() {
     return newColors;
 }
 
+// convert rgb values to hex values
 function RGBToHex(rgb) {
     let sep = rgb.indexOf(",") > -1 ? "," : " ";
     rgb = rgb.substr(4).split(")")[0].split(sep);
@@ -48,6 +51,7 @@ function RGBToHex(rgb) {
     return "#" + r + g + b;
 }
 
+// send a post request to a server
 function sendData(url, data) {
     $.ajax({
         url: url,
