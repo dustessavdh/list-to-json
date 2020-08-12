@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test data</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <link rel="stylesheet" href="/stylesheets/no.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/no.css" />
     <script src="/javascripts/parser.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
-<body>
-    <button class="normal" onclick="parseKleuren()">normal</button>
-    <!-- Gekopieerd van https://www.kleurenwaaier.nl/bepaal-je-kleur -->
-    <ul id="color-list" class="color-list" data-bind="foreach: { data: colors, as: 'color' }">
-        <li data-bind="style: { 'background-color': color.code }, attr: { class: color.lightName }, css: { bordered: color.brightness > 250 }" class="light" style="background-color: #e5ecf2;">
-            <a data-bind="attr: { href: '/kleur/' + color.url }" href="/kleur/gamma-nieuw-GN-076-13-slagroom">
-                <div class="line1" data-bind="text: color.name">GN 076-13</div>
-                <div class="line2">
-                    <span class="color-title" data-bind="text: color.title">Slagroom</span>
-                    <span data-bind="text: color.colorfanName">Gamma *nieuw</span>
-                </div>
-            </a>
+  </head>
+  <body>
+    <nav>
+      <!-- if you want a logo -->
+      <a>LOGO HERE</a>
+
+      <!-- if you want a hamburger for small screens -->
+      <label for="hamburger">&#9776;</label>
+      <input type="checkbox" id="hamburger" />
+
+      <!-- first UL is left menu -->
+      <ul>
+        <li><a>Link1</a></li>
+        <li><a>Link2</a></li>
+        <li>
+          <a>Link3</a>
+          <!-- optional sub menu -->
+          <ul>
+            <li><a>Link4</a></li>
+            <li><a>Link5</a></li>
+          </ul>
         </li>
-    
-        <li data-bind="style: { 'background-color': color.code }, attr: { class: color.lightName }, css: { bordered: color.brightness > 250 }" class="light" style="background-color: rgb(231, 235, 241);">
-            <a data-bind="attr: { href: '/kleur/' + color.url }" href="/kleur/gamma-nieuw-GN-087-13-schelp">
-                <div class="line1" data-bind="text: color.name">GN 087-13</div>
-                <div class="line2">
-                    <span class="color-title" data-bind="text: color.title">Schelp</span>
-                    <span data-bind="text: color.colorfanName">Gamma *nieuw</span>
-                </div>
-            </a>
+      </ul>
+
+      <!-- second UL is right menu -->
+      <ul>
+        <li>
+          <a>Link6</a>
+          <ul>
+            <li><a>Link7</a></li>
+            <li><a>Link8</a></li>
+          </ul>
         </li>
-    
-        <li data-bind="style: { 'background-color': color.code }, attr: { class: color.lightName }, css: { bordered: color.brightness > 250 }" class="light" style="background-color: rgb(235, 239, 245);">
-            <a data-bind="attr: { href: '/kleur/' + color.url }" href="/kleur/gamma-nieuw-GN-082-13-schaap">
-                <div class="line1" data-bind="text: color.name">GN 082-13</div>
-                <div class="line2">
-                    <span class="color-title" data-bind="text: color.title">Schaap</span>
-                    <span data-bind="text: color.colorfanName">Gamma *nieuw</span>
-                </div>
-            </a>
-        </li>
-    </ul>
-</body>
+      </ul>
+    </nav>
+  </body>
 </html>
