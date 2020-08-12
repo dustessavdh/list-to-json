@@ -1,3 +1,4 @@
+//TODO this has to change a lot
 // handle the pipeline for parsing all the data on the website
 function parseKleuren() {
     let newColors = parseList();
@@ -58,6 +59,7 @@ function sendData(url, data) {
         type: "POST",
         data: {data: data},
         success: (res) => {
+            //TODO add popup or something when  succesfull
             console.log(res);
         },
         error: (err) => {

@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test data</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/no.css">
     <script src="/javascripts/parser.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body onload="parseKleuren()">
+<body>
+    <button class="normal" onclick="parseKleuren()">normal</button>
     <!-- Gekopieerd van https://www.kleurenwaaier.nl/bepaal-je-kleur -->
     <ul id="color-list" class="color-list" data-bind="foreach: { data: colors, as: 'color' }">
         <li data-bind="style: { 'background-color': color.code }, attr: { class: color.lightName }, css: { bordered: color.brightness > 250 }" class="light" style="background-color: #e5ecf2;">
