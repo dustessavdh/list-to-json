@@ -5,9 +5,10 @@ const file = 'kleuren.json';
 
 // write the data that is given as a parameter to an json file
 exports.writeToJson = (newColors) => {
+    //TODO cleanup this code
+    //TODO instead of opening an existing file, I should just create a new file everytime
     const filePath = path.join(__dirname, '../models/', file);
 
-    //TODO cleanup this code
     // Open the file, append the new colors and write to the file.
     fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {
@@ -15,7 +16,7 @@ exports.writeToJson = (newColors) => {
         } else {
             obj = JSON.parse(data);
 
-            obj.gamma.colors = addColorsToArray(obj.gamma.colors, newColors.colors)
+            obj.gamma.colors = addColorsToArray(obj.gamma.colors, newColors.colors);
             var json = JSON.stringify(obj);
             
             fs.writeFile(filePath, json, 'utf8', (err) => {
