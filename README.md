@@ -30,7 +30,7 @@ I thought this was a great learning project since I have very little expirience 
    - on Windows PowerShell `$env:DEBUG='list-to-json:*'; npm start`
 3. go to [`http://localhost:3000/`](http://localhost:3000/)
 
-## Coffee break
+## Coffee break :coffee:
 
 Somtimes you need a quick break to restore your epic coding skills.
 So [click here](https://www.reddit.com/random) and get suprised by a random post everytime you click.

@@ -22,7 +22,7 @@
       <input type="checkbox" id="hamburger" />
 
       <ul>
-        <li><a href="#">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li>
           <a href="/tools">Tools</a>
           <ul>
@@ -40,7 +40,7 @@
     <div class="collums">
       <div class="col">
         <h1>{{ title }}</h1>
-        <p>Welcome to {{ title }}</p>
+        <p>//TODO insert some forms and accordions for settings</p>
       </div>
     </div>
 
