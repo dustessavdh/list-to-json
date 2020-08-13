@@ -8,6 +8,7 @@
 
   <!-- stylesheets -->
   <link rel="stylesheet" type="text/css" href="/stylesheets/no.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
 
   <!-- javascripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -16,7 +17,7 @@
 </head>
 
 <body>
-  <nav class="black">
+  <nav class="warning">
     <a href="/">List to JSON</a>
 
     <label for="hamburger">&#9776;</label>
@@ -38,7 +39,7 @@
     </ul>
   </nav>
 
-  <div class="collums">
+  <div class="collums animate__animated animate__headShake">
     <div class="col">
       <h1>{{ message }}</h1>
       <h2>{{ error.status }}</h2>
@@ -46,7 +47,7 @@
     </div>
   </div>
 
-  <footer class="black columns">
+  <footer class="warning columns">
     <!--TODO Insert footer stuff -->
     <div class="col">
       <p>Insert footer stuff</p>
