@@ -20,7 +20,7 @@
   "homepage": "https://github.com/dusthijsvdh/list-to-json#readme",
   "dependencies": {
     "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
+    "debug": "~4.1.1",
     "express": "~4.16.1",
     "hjs": "~0.0.6",
     "http-errors": "~1.6.3",
