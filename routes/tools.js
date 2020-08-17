@@ -19,6 +19,7 @@ router.get('/list-json', function (req, res, next) {
 });
 
 router.post('/list-json/submit', function (req, res, next) {
+  //TODO less dirty 💩
   axios.get(req.body.reqUrl)
   .then(response => {
     console.log(response.data);
@@ -39,6 +40,7 @@ router.get('/json-json', function (req, res, next) {
 });
 
 router.post('/json-json/submit', function (req, res, next) {
+  //TODO less dirty 💩
   axios.get(req.body.reqUrl)
   .then(response => {
     console.log(response.data);
