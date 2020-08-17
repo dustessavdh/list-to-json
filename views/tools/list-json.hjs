@@ -2,5 +2,10 @@
   <div class="col">
     <h1>{{ title }}</h1>
     <p>//TODO insert some forms and accordions for settings</p>
+    <form action="/tools/list-json/submit" method="POST">
+      <label for="reqUrl">URL to site:</label>
+      <input type="url" name="reqUrl" id="reqUrl" placeholder="http://www.example.com/" required autofocus>
+      <input type="submit" value="Submit">
+    </form>
   </div>
 </div>
