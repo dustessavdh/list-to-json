@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session')
 var flash = require('connect-flash');
 var logger = require('morgan');
+var { secret, maxAge } = require('./config');
 
 // routers
 var indexRouter = require('./routes/index');
@@ -20,12 +21,12 @@ app.set('view engine', 'hjs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser('stuff'));
+app.use(cookieParser(secret));
 app.use(session({
-  secret: 'stuff',
+  secret: secret,
   resave: false,
   saveUninitialized: true,
-  cookie: { maxAge: 60000 }
+  cookie: { maxAge: maxAge }
 }));
 app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
