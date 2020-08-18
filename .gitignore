@@ -6,3 +6,5 @@ models/*.json
 !models/example.json
 
 .env
+*.crt
+*.key

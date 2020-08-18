@@ -25,11 +25,12 @@ I thought this was a great learning project since I have very little expirience 
 
 1. Run `npm install`.
 2. Rename `.env.example` to `.env` and fill in the variables.
-3. Run the following commad:
+3. Add SSL certificates named `list-to-json.key` & `list-to-json.crt` in the root folder.
+4. Run the following commad:
    - on MacOS or Linux `DEBUG=list-to-json:* npm start`.
    - on Windows Command Prompt `SET DEBUG=list-to-json:* & npm start`
    - on Windows PowerShell `$env:DEBUG='list-to-json:*'; npm start`
-4. Go to [`http://localhost:3000/`](http://localhost:3000/) or the port number you defined.
+5. Go to [`https://localhost:3000/`](https://localhost:3000/) or the port number you defined.
 
 ## :coffee:/:tea: break
 

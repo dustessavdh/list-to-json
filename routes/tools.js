@@ -4,21 +4,21 @@ var createError = require('http-errors');
 var router = express.Router();
 
 /* GET tools home page. */
-router.get('/', function(req, res, next) {
+router.get('/', (req, res, next) => {
   res.render('layout', {
     title: 'Tools',
     partials: {content: 'tools/tools'}
   });
 });
 
-router.get('/list-json', function (req, res, next) {
+router.get('/list-json', (req, res, next) => {
   res.render('layout', {
     title: 'List to JSON',
     partials: {content: 'tools/list-json'}
   });
 });
 
-router.post('/list-json/submit', function (req, res, next) {
+router.post('/list-json/submit', (req, res, next) => {
   //TODO less dirty 💩
   axios.get(req.body.reqUrl)
   .then(response => {
@@ -32,14 +32,14 @@ router.post('/list-json/submit', function (req, res, next) {
   });
 });
 
-router.get('/json-json', function (req, res, next) {
+router.get('/json-json', (req, res, next) => {
   res.render('layout', {
     title: 'JSON to JSON',
     partials: {content: 'tools/json-json'}
   });
 });
 
-router.post('/json-json/submit', function (req, res, next) {
+router.post('/json-json/submit', (req, res, next) => {
   //TODO less dirty 💩
   axios.get(req.body.reqUrl)
   .then(response => {
@@ -53,7 +53,7 @@ router.post('/json-json/submit', function (req, res, next) {
   });
 });
 
-router.get('/json-json/results', function (req, res, next) {
+router.get('/json-json/results', (req, res, next) => {
   res.render('layout', {
     title: 'JSON Results',
     rawJson: req.cookies.rawJson,
