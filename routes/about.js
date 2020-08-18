@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+/* GET about page. */
 router.get('/', function(req, res, next) {
   res.render('layout', {
-    title: 'List/JSON to JSON',
-    partials: {content: 'index'}
-  });
+      title: 'About',
+      partials: {content: 'about/about'}
+    });
 });
 
 module.exports = router;

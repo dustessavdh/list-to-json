@@ -5,7 +5,6 @@
   "main": "app.js",
   "private": false,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./bin/www"
   },
   "repository": {
@@ -20,9 +19,12 @@
   },
   "homepage": "https://github.com/dusthijsvdh/list-to-json#readme",
   "dependencies": {
+    "axios": "^0.19.2",
     "cookie-parser": "~1.4.4",
     "debug": "~4.1.1",
-    "express": "^4.17.1",
+    "express": "~4.17.1",
+    "hjs": "~0.0.6",
+    "http-errors": "~1.8.0",
     "morgan": "~1.10.0"
   }
 }

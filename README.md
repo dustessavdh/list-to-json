@@ -1,8 +1,36 @@
-# list-to-json
+# Introduction
 
- The goal is to write something in javascript that can read a list from a website and parse it to json.
+ The goal is to write something in javascript that can read a list from a website and parse it to JSON.
+ It will also be able to parse JSON to JSON.
 
-## Used for
+## list to JSON
 
- I want to use this to help me with making my [color game](https://github.com/dusthijsvdh/kleurenspel).
- Because it will need a lot of data I don't want to do it completly manually. On the site [kleurenwaaier.nl](https://www.kleurenwaaier.nl/bepaal-je-kleur/) there is a huge list with colours. To easily convert this to a usable json file I wanted to try something in javascript.
+The user can enter a url.
+They then get options on how to interpret this list and how to save this to JSON in the way they want.
+
+## JSON to JSON
+
+The user can enter a url. The url provided must give valid JSON back.
+They then get options on how to interpret this JSON and how to save this to JSON in the way they want.
+
+## Why I created this
+
+I originally created this to help me with making my [color game](https://github.com/dusthijsvdh/kleurenspel).
+For my [color game](https://github.com/dusthijsvdh/kleurenspel) I need(ed) a JSON file with color names and codes.
+The site [kleurenwaaier.nl](https://www.kleurenwaaier.nl/bepaal-je-kleur/) has a huge list of colors.
+So to easily turn that into a JSON file I started this project.
+I thought this was a great learning project since I have very little expirience in JavaScript and no expirience in Node.js.
+
+## How to run
+
+1. Run `npm install`.
+2. Run the following commad:
+   - on MacOS or Linux `DEBUG=list-to-json:* npm start`.
+   - on Windows Command Prompt `SET DEBUG=list-to-json:* & npm start`
+   - on Windows PowerShell `$env:DEBUG='list-to-json:*'; npm start`
+3. go to [`http://localhost:3000/`](http://localhost:3000/)
+
+## :coffee:/:tea: break
+
+Somtimes you need a quick break to restore your epic coding skills.
+So [click here](https://www.reddit.com/random) and get suprised by a random post everytime you click.
