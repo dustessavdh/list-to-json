@@ -44,12 +44,21 @@ router.post('/json-json/submit', function (req, res, next) {
   axios.get(req.body.reqUrl)
   .then(response => {
     console.log(response.data);
-    res.redirect('/tools/json-json');
+    req.flash('rawJson', JSON.stringify(response.data, null, 2));
+    res.redirect('/tools/json-json/results');
   })
   .catch(err => {
     console.log(err);
     //TODO add usefull message
     next(createError(400));
+  });
+});
+
+router.get('/json-json/results', function (req, res, next) {
+  res.render('layout', {
+    title: 'JSON Results',
+    rawJson: req.flash('rawJson'),
+    partials: {content: 'tools/json-results'}
   });
 });
 

@@ -1,0 +1,14 @@
+<div class="collums">
+  <div class="col">
+    <h1>{{ title }}</h1>
+    <div class="padded info fill">
+      <div class="accordion">
+        <input type="checkbox" id="x01">
+        <label for="x01">raw JSON</label>
+        <div>
+          <pre>{{ rawJson }}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
