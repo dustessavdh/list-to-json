@@ -24,11 +24,12 @@ I thought this was a great learning project since I have very little expirience 
 ## How to run
 
 1. Run `npm install`.
-2. Run the following commad:
+2. Rename `.env.example` to `.env` and fill in the variables.
+3. Run the following commad:
    - on MacOS or Linux `DEBUG=list-to-json:* npm start`.
    - on Windows Command Prompt `SET DEBUG=list-to-json:* & npm start`
    - on Windows PowerShell `$env:DEBUG='list-to-json:*'; npm start`
-3. go to [`http://localhost:3000/`](http://localhost:3000/)
+4. Go to [`http://localhost:3000/`](http://localhost:3000/) or the port number you defined.
 
 ## :coffee:/:tea: break
 

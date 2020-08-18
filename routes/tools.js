@@ -43,13 +43,21 @@ router.post('/json-json/submit', function (req, res, next) {
   //TODO less dirty 💩
   axios.get(req.body.reqUrl)
   .then(response => {
-    console.log(response.data);
-    res.redirect('/tools/json-json');
+    res.cookie('rawJson', JSON.stringify(response.data, null, 2));
+    res.redirect('/tools/json-json/results');
   })
   .catch(err => {
     console.log(err);
     //TODO add usefull message
     next(createError(400));
+  });
+});
+
+router.get('/json-json/results', function (req, res, next) {
+  res.render('layout', {
+    title: 'JSON Results',
+    rawJson: req.cookies.rawJson,
+    partials: {content: 'tools/json-results'}
   });
 });
 
