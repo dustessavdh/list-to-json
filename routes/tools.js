@@ -39,25 +39,19 @@ router.get('/json-json', (req, res, next) => {
   });
 });
 
-router.post('/json-json/submit', (req, res, next) => {
-  //TODO less dirty 💩
+router.post('/json-json/results', (req, res, next) => {
   axios.get(req.body.reqUrl)
   .then(response => {
-    res.cookie('rawJson', JSON.stringify(response.data, null, 2));
-    res.redirect('/tools/json-json/results');
+    res.render('layout', {
+      title: 'JSON Results',
+      rawJson: JSON.stringify(response.data, null, 2),
+      partials: {content: 'tools/json-results'}
+    });
   })
   .catch(err => {
     console.log(err);
     //TODO add usefull message
     next(createError(400));
-  });
-});
-
-router.get('/json-json/results', (req, res, next) => {
-  res.render('layout', {
-    title: 'JSON Results',
-    rawJson: req.cookies.rawJson,
-    partials: {content: 'tools/json-results'}
   });
 });
 

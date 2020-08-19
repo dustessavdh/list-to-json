@@ -2,7 +2,7 @@
   <div class="col">
     <h1>{{ title }}</h1>
     <p>//TODO insert some forms and accordions for settings</p>
-    <form action="/tools/json-json/submit" method="POST">
+    <form action="/tools/json-json/results" method="POST">
       <label for="reqUrl">URL to JSON:</label>
       <input type="url" name="reqUrl" id="reqUrl" placeholder="http://www.example.com/jsonresponse" required autofocus>
       <input type="submit" value="Submit">
