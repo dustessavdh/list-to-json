@@ -4,9 +4,9 @@
     <div class="padded info fill">
       <div class="accordion">
         <input type="checkbox" id="x01">
-        <label for="x01">raw JSON</label>
+        <label for="x01">Formatted JSON</label>
         <div>
-          <pre>{{ rawJson }}</pre>
+          <pre>{{ formattedJson }}</pre>
         </div>
       </div>
     </div>

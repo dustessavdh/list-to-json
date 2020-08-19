@@ -44,7 +44,7 @@ router.post('/json-json/results', (req, res, next) => {
   .then(response => {
     res.render('layout', {
       title: 'JSON Results',
-      rawJson: JSON.stringify(response.data, null, 2),
+      formattedJson: JSON.stringify(response.data, null, 2),
       partials: {content: 'tools/json-results'}
     });
   })
