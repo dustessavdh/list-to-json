@@ -1,5 +1,10 @@
 const axios = require('axios');
 
+// https://web.dev/promises
+// var promise = new Promise(function(resolve, reject) {
+//   resolve('call thin when it worked');
+//   reject('call thus when it did not wotk');
+// });
 function getFormattedJson(url) {
   //TODO search how promisses work
   //TODO check if the url is safe using some sort of API or module
