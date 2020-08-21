@@ -2,6 +2,7 @@ const express = require('express');
 const axios = require('axios');
 const createError = require('http-errors');
 const router = express.Router();
+const jsonService = require('../services/json-json');
 
 /* GET tools home page. */
 router.get('/', (req, res, next) => {
@@ -40,7 +41,9 @@ router.get('/json-json', (req, res, next) => {
 });
 
 router.post('/json-json/results', (req, res, next) => {
-  axios.get(req.body.reqUrl)
+  const reqUrl = req.body.reqUrl;
+
+  jsonService.getFormattedJson(reqUrl)
   .then(response => {
     res.render('layout', {
       title: 'JSON Results',
@@ -49,8 +52,7 @@ router.post('/json-json/results', (req, res, next) => {
     });
   })
   .catch(err => {
-    console.log(err);
-    //TODO add usefull message
+    //TODO add usefull message using the message from the err
     next(createError(400));
   });
 });

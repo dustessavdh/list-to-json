@@ -10,21 +10,31 @@ const axios = require('axios');
 //     }
 //   });
 // }
+
 function getFormattedJson(url) {
-  //TODO search how promisses work
-  //TODO check if the url is safe using some sort of API or module
-  let rawJson;
-  axios.get(url)
+  return new Promise((resolve, reject) => {
+    //TODO check if the url is safe using some sort of API or module
+    axios.get(url)
     .then(response => {
       //TODO check if the response is actually an JSON response
-      console.log('Response body: ', response.body);
-      console.log('Response data: ', response.data);
-      rawJson = response.body;
-    })
-    .catch(err => {
+      console.log('response body: ', response.body);
+      console.log('response data: ', response.body);
+
+      //TODO format JSON.
+       const formattedJson = formatJson(response.body);
+
+      resolve(JSON.stringify(formattedJson, null, 2));
+    }).catch(err => {
       console.log(err);
+
+      reject(err);
     });
-    return JSON.stringify(rawJson, null, 2);
+  });
+}
+
+function formatJson(rawJson) {
+  //TODO remove all items from an array and leave the first one
+  return rawJson;
 }
 
 module.exports = {
