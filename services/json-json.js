@@ -18,10 +18,10 @@ function getFormattedJson(url) {
     .then(response => {
       //TODO check if the response is actually an JSON response
       console.log('response body: ', response.body);
-      console.log('response data: ', response.body);
+      console.log('response data: ', response.data);
 
       //TODO format JSON.
-       const formattedJson = formatJson(response.body);
+       const formattedJson = formatJson(response.data);
 
       resolve(JSON.stringify(formattedJson, null, 2));
     }).catch(err => {
