@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/dusthijsvdh/list-to-json#readme",
   "dependencies": {
-    "axios": "^0.21.0",
+    "axios": "^0.22.0",
     "cookie-parser": "~1.4.4",
     "debug": "~4.3.1",
     "dotenv": "^9.0.1",
